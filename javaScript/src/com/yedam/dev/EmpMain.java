@@ -7,7 +7,7 @@ public class EmpMain {
 		EmpDAO e = new EmpDAO();
 		List<Employee> elist = e.getEmpList();
 		for (Employee emp : elist) {
-			System.out.println();
+			System.out.println(emp);
 		}
 	}
 }

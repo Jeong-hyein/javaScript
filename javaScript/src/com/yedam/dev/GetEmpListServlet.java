@@ -37,7 +37,7 @@ public class GetEmpListServlet extends HttpServlet {
 					+ "\",\"last_name\":\"" + e.getLastName()
 					+ "\",\"email\":\"" + e.getEmail() 
 					+ "\",\"salary\":" + e.getSalary() + "}";
-					;
+					
 			
 			if(++rCnt != totalCnt) 
 				empJson += ",";				
