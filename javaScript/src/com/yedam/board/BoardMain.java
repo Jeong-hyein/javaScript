@@ -7,14 +7,14 @@ public class BoardMain {
 		BoardDAO b = new BoardDAO();
 		
 //		전체 조회
-//		List<Board> blist = b.getBoardList();
-//		for(Board bod : blist) {
-//			System.out.println(bod);
-//		}
+		List<Board> blist = b.getBoardList();
+		for(Board bod : blist) {
+			System.out.println(bod);
+		}
 		
 //		한건 조회
-		Board bod = b.getBoardInfo(1);
-		System.out.println(bod);
+//		Board bod = b.getBoardInfo(1);
+//		System.out.println(bod);
 		
 //		추가
 //		Board board = new Board();

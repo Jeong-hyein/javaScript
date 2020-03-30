@@ -28,7 +28,7 @@ public class BoardDAO {
 //	전체 조회
 	public List<Board> getBoardList() {
 		String sql = "select board_no, content, writer, create_date from board\r\n" 
-					+ "order by board_no desc";
+					+ "order by board_no asc"; //desc: 내림차순, asc: 오름차순
 		List<Board> list = new ArrayList<>();
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
