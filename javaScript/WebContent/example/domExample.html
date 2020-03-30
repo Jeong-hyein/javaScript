@@ -49,9 +49,12 @@
                 });
                 
                 var text = a.innerHTML;
+                console.log(text);
+                console.log("================")
                 var $li = document.createElement('li');
                 var $input = document.createElement('input');
                 $input.value = text;
+                console.log($input.value);
                 $li.appendChild($input);
                 a.after($li);
                 var btn = document.createElement('button');
