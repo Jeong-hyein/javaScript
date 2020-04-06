@@ -31,13 +31,13 @@ public class BasicExample {
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					}
-				}
+				};
 				
-			}
+			
 //		Toolkit tkit = Toolkit.getDefaultToolkit();
-		RunnableCls rcs = new RunnableCls(); //신규작업 인스턴스
-		Thread thread = new Thread(); //쓰레드 생성
-		thread.start(); //신규작업 시작
+//		RunnableCls rcs = new RunnableCls(); //신규작업 인스턴스
+//		Thread thread = new Thread(); //쓰레드 생성
+//		thread.start(); //신규작업 시작
 		
 		// 띵 10번이 끝나면 10번 화면에 찍힌다.
 //		for (int i = 0; i < 10; i++) {
@@ -57,7 +57,8 @@ public class BasicExample {
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
+			}
 		}
-		}
-	
-
+	}
+}
+}
