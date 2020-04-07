@@ -22,13 +22,13 @@ public class PredicateExample {
 	}
 
 	public static void main(String[] args) {
-		//익명객체
+		// 익명객체
 		double result = avg(new Predicate<Student>() {// new를 쓰는건 익명객체를 받겠다.
 			@Override
 			public boolean test(Student t) {
 //				return t.getSex().equals("남자");
 				return t.getSex().equals("여자");
-				
+
 //				if(t.getSex().equals("남자"))
 //					return true;
 //				else
@@ -36,12 +36,9 @@ public class PredicateExample {
 			}
 		});
 		System.out.println("여자평균결과: " + result);
-		
-		
+
 		result = avg(t -> t.getSex().equals("남자"));
 		System.out.println("남자평균결과: " + result);
 	}
-	
-	}
 
-
+}
