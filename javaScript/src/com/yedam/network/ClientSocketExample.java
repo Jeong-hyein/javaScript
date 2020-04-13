@@ -12,7 +12,7 @@ public class ClientSocketExample {
 		try {
 			System.out.println("[연결 요청]");
 			socket = new Socket();
-			//교수님꺼 69, 내꺼 35
+			//교수님꺼 69, 내꺼 35, 현우형 23
 			socket.connect(new InetSocketAddress("192.168.0.69", 5001));
 			System.out.println("[연결 성공]");
 		} catch (IOException e) {

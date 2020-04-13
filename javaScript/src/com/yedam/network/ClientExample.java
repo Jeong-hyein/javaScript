@@ -96,12 +96,13 @@ public class ClientExample extends Application {
 			public void run() {
 				try {
 					byte[] buf = data.getBytes("UTF-8");
-					OutputStream os = socket.getOutputStream();
+					OutputStream os = socket.getOutputStream(); //outputstream을 만들어서보냄
 					os.write(buf);
-					os.flush();
+					os.flush(); //보내는거
 					Platform.runLater(() -> {
-						displayText("[보내기 완료]");
+						displayText("[보내기 완료]"); //메세지를 출력, 메세지를 보낸거면 나옴
 					});
+					
 				} catch (IOException e) {
 					e.printStackTrace();
 					Platform.runLater(() -> {
@@ -109,8 +110,7 @@ public class ClientExample extends Application {
 						stopClient();
 					});
 				}
-			}
-			
+			}		
 		};
 		thread.start();
 	}// end of send()
@@ -139,17 +139,17 @@ public class ClientExample extends Application {
 		btnConn.setPrefSize(60, 30);
 		btnConn.setOnAction(event -> {
 			if(btnConn.getText().contentEquals("start")) {
-				// startClient();
+				 startClient();
 			} else if (btnConn.getText().contentEquals("stop")) {
-				// stopClient();
+				 stopClient();
 		}
 		});
 		
 		btnSend = new Button("send");
 		btnSend.setPrefSize(60, 30);
 		btnSend.setDisable(true); //커낵트를 누르면 활성화
-		btnSend.setOnAction( event -> System.out.println()//"메세지 보내는 기능"
-				);
+		//action이벤트를 일으킬때마다
+		btnSend.setOnAction( event -> send(txtInput.getText())); //"메세지 보내는 기능"
 		bottom.setCenter(txtInput);
 		bottom.setLeft(btnConn);
 		bottom.setRight(btnSend);
