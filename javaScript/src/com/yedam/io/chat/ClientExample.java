@@ -43,7 +43,7 @@ public class ClientExample extends Application {
 					return;
 				}
 				receive();
-			}
+			} //end of run()
 		};
 		thread.start();
 
@@ -76,7 +76,7 @@ public class ClientExample extends Application {
 					throw new IOException();
 				}
 				String data = new String(byteArr, 0, readByteCount, "UTF-8");
-				Platform.runLater(() -> displayText("[받기 완료]" + data));
+				Platform.runLater(() -> displayText("[받기 완료][정혜인]" + data));
 			} catch (Exception e) {
 				Platform.runLater(() -> displayText("[서버 통신 안됨]"));
 				stopClient();

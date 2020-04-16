@@ -28,7 +28,7 @@ public class ClientExample extends Application {
 			public void run() {
 				socket = new Socket();
 				try {
-					socket.connect(new InetSocketAddress("192.168.0.35", 5001));
+					socket.connect(new InetSocketAddress("192.168.0.69", 5001));
 					Platform.runLater(() -> {
 						displayText("[연결 완료: " + socket.getRemoteSocketAddress());
 						btnConn.setText("stop");
@@ -41,7 +41,8 @@ public class ClientExample extends Application {
 						stopClient();	
 					}
 				}
-			}
+				receive();
+			} //end of run()
 			
 		};
 		thread.start();
@@ -91,11 +92,11 @@ public class ClientExample extends Application {
 	// send() 데이터 보내는거
 	void send(String data) {
 		Thread thread = new Thread() {
-
+			String userData = "[이현우]" + data;
 			@Override
 			public void run() {
 				try {
-					byte[] buf = data.getBytes("UTF-8");
+					byte[] buf = userData.getBytes("UTF-8"); //"[혜인]' + data.getBytes("UTF-8"); 하거나 sned에
 					OutputStream os = socket.getOutputStream(); //outputstream을 만들어서보냄
 					os.write(buf);
 					os.flush(); //보내는거
